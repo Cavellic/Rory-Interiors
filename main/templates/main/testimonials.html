@@ -1,0 +1,51 @@
+{% extends 'main/main.html' %} {% load static %} {% block content %}
+
+
+<!-- client section -->
+
+<section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Reviews
+        </h2>
+        <br>
+        <p style="font-weight: 600; text-align: center; background-color:rgb(173, 153, 189); border-radius: 6px; padding: 15px; ">
+          Hello, we would love to hear what you think about our services as Rory Interior. Just add your review and let us know what you think.
+        </p>
+        <div class="btn-box">
+            <a href="{% url 'add_testimony' %}">
+              Add Review
+            </a>
+      </div>
+      <div class="row">
+        <div class="col-md-11 col-lg-10 mx-auto">
+          {% for testimony in testimonials %}
+          <div class="box">
+            <div class="img-box">
+              <img src="{{testimony.imageURL}}" alt="" />
+            </div>
+            <div class="detail-box">
+              
+              <div class="name">
+                <h6>
+                  {{testimony.first_name}} {{testimony.last_name}}
+                </h6>
+              </div>
+              <p>
+                {{testimony.review}}
+              </p>
+              <i class="fa fa-quote-left" aria-hidden="true"></i>
+            </div>
+
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- end client section -->
+
+{% endblock content %}

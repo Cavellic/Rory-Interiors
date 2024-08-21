@@ -1,0 +1,222 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" integrity="sha512-rd0qOHVMOcez6pLWPVFIv7EfSdGKLt+eafXh4RO/12Fgr41hDQxfGvoi1Vy55QIVcQEujUE1LQrATCLl2Fs+ag==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css" integrity="sha512-pmAAV1X4Nh5jA9m+jcvwJXFQvCBi3T17aZ1KWkqXr7g/O2YMvO8rfaa5ETWDuBvRq6fbDjlw4jHL44jNTScaKg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link
+      rel="icon"
+      href="{% static 'images/favicon.png' %}"
+      type="image/gif"
+    />
+
+    <title>Rory Interiors</title>
+
+    <!-- bootstrap core css -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/bootstrap.css' %}"
+    />
+
+    <!-- fonts style -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- lightbox Gallery-->
+    <link rel="stylesheet" href="{% static 'css/ekko-lightbox.css' %}" />
+
+    <!-- font awesome style -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-dark bg-tertiary fixed-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Rory Interiors</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Reviews</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Gallery
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">Couches</a></li>
+                    <li><a class="dropdown-item" href="#">Headboards</a></li>
+                    <li><a class="dropdown-item" href="#">Ottomans</a></li>
+                    <li><a class="dropdown-item" href="#">Chairs</a></li>
+                    <li><a class="dropdown-item" href="#">Blanket Boxes</a></li>
+                    <li><a class="dropdown-item" href="#">Lamp Shades</a></li>
+                    <li><a class="dropdown-item" href="#">Curtains</a></li>
+                    <li><a class="dropdown-item" href="#">Cushions</a></li>
+                    <li><a class="dropdown-item" href="#">Scatter Cushions</a></li>
+                    <li><a class="dropdown-item" href="#">Roman Blinds</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <br>
+                <a href="{%url 'login'%}">
+                  <button class="btn btn-success" type="submit">Login</button>
+                </a>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+
+    {% block content %} 
+    
+    
+    {% endblock content %}
+    <!-- info section -->
+    <section class="info_section">
+      <div class="container">
+        <div class="row info_main_row">
+          <div class="col-md-6 col-lg-3">
+            <div class="info_insta">
+              <a href="{% url 'home' %}">
+                <h4 style="color: #fff">Rory Interiors</h4>
+              </a>
+              <p class="mb-0">
+                Our skilled craftsmen posses a deep understanding of upholstery techniques, ensuring precision and attention
+                to detail in every project. From classic to modern designs, we bring your vision to life.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h4>Contact Us</h4>
+            <div class="info_contact">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span> 43 Victoria Drive Newlands Harare </span>
+              </a>
+              <a href="tel:+263775911948">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span> Call +263 77 591 1948 </span>
+              </a>
+
+              <a href="mailto:sales@roryinteriors.co.zw">
+                <i class="fa fa-envelope"></i>
+                <span> sales@roryinteriors.co.zw </span>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h4>Follow Us</h4>
+            <div class="social_box">
+              <a href="">
+                <i style="color: blue;" class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              
+              <a href="">
+                <i style="color: rgb(43, 231, 43);" class="fa fa-whatsapp" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i style="color: rgb(226, 10, 172);" class="fa fa-instagram fa-breathe" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- end info_section -->
+
+    <!-- footer section -->
+    <footer class="footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a style="text-decoration: none;" href="https://www.casoetechnologies.co.zw/">Casoe Technologies</a>
+        </p>
+      </div>
+    </footer>
+    <!-- footer section -->
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+
+    var swip = new Swip(".swiper-cont", {
+      effect: "coverflow",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+  </script>
+    <!-- jQery -->
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <!-- bootstrap js -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <!-- lightbox Gallery-->
+    <script src="{% static 'js/ekko-lightbox.min.js' %}"></script>
+    <!-- custom js -->
+    <script src="{% static 'js/custom.js' %}"></script>
+  </body>
+</html> 

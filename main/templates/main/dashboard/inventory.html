@@ -1,0 +1,95 @@
+{% extends 'main/dashboard.html' %}
+
+{% load static %}
+
+<!--css-->
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!--font-awesome-->
+<link rel="stylesheet" href="{% static 'fontawesome-free-6.4.0-web/css/all.min.css' %}">
+
+<!--Bootstrap-->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+<!--material icons-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+outline" rel="stylesheet">
+
+{% block content %}
+
+<!--main-->
+<main class="main-container">
+
+    <!-- Modal -->
+    <form action="" method="post" class="bg-dark text-white mt-4"
+        style="background-color: transparent !important; border: thin solid grey; padding: 15px; border-radius: 8px;">
+        
+        <br>
+        {% csrf_token %}
+
+        <p>
+        <div class="row">
+           
+            <div class="col-md-5">
+                <div class="main-title">
+                    <h4>Add new item</h4>
+                </div>
+                <br>
+                <br>
+                <label for="item">Item name</label>
+                <br>
+                <input type="text" name="item" class="form-control">
+                <br>
+                <label for="quantity">Quantity</label>
+                <br>
+                <input type="number" name="quantity" class="form-control">
+                <br>
+                <button style="width: 40%;" type="submit-button"
+                    class="btn btn-outline-light btn-lg px-5 mt-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Submit
+                </button>
+            </div>
+
+            <div class="col-md-7">
+                <div class="main-title mt-5">
+                    <h4>All items in stock</h4>
+                </div>
+                <br>
+                <br>
+                <table class="product-catalogue-table mt-2" border="1">
+                    <tr class="th-row">
+                        <th style="padding: 9px;">Item</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+            
+                    {% for item in items %}
+                    <tr style="background-color: lightgoldenrodyellow; color: black;" class="table-data">
+                        <td style="padding: 9px;">{{item.item}}</td>
+                        <td>{{item.quantity}}</td>
+                        
+                        <td style="padding: 0 4px 0 9px;">
+            
+                            <a href="" style="color: rgb(172, 10, 10); font-size: 20px; text-decoration: none; cursor: pointer;">
+                                <abbr title="Delete"><i class="fa fa-trash-can"></i></abbr>
+                            </a>
+                            &nbsp; &nbsp;&nbsp; &nbsp;
+                            <a href="" style="color: rgb(36, 153, 36); font-size: 20px;">
+                                <abbr title="Edit"><i class="fa fa-pen-to-square"></i></abbr>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+            
+                </table>
+    
+            </div>
+        
+        </p>
+
+
+    </form>
+
+</main>
+<!--end main-->
+
+{% endblock content %}

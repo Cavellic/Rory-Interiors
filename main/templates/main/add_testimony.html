@@ -1,0 +1,53 @@
+{% extends 'main/main.html' %} {% load static %} {% block content %}
+<div style="margin-top: 80px; margin-bottom: 50px;" class="container ">
+    
+  <div class="form" style="color: #fff; padding: 10px 10px 10px 10px; border: thin solid #f87f1b; border-radius: 10px; background-color: #150f25">
+
+    {% if messages %}
+        
+            {% for msg in messages %}
+            <div style="background-color: rgb(157, 134, 158); border-radius: 0 10px 0 10px; padding: 30px 30px 30px 30px; margin-bottom: 50px; margin-top: 40px;" class="msg">
+                {{msg}}
+            </div>
+            {% endfor %}
+        
+        {% endif %}
+        <br>
+    <form class="mt-5" action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="first_name">First name:</label>
+          {{form.first_name}}
+
+          <br>
+
+          <label for="first_name">Last name:</label>
+          {{form.last_name}}
+
+        </div>
+        <div class="col-md-6">
+          <label for="first_name">Image:(Optional)</label>
+          {{form.image}}
+
+          <br>
+          <br>
+          <br>
+
+          <label for="first_name">Review:</label>
+          {{form.review}}
+        </div>
+      </div>
+
+
+      <input style="border: thin #0a0202; border-radius: 5px; width: 20%; padding: 10px 0 10px 0; margin-top: 20px;" type="submit" class="btn-warning" value="Submit" />
+      {% if messages %}
+      <a class="fa-shake" href="{% url 'testimonials' %}">
+        <input style="border: thin #0a0202; border-radius: 5px; width: 20%; padding: 10px 0 10px 0; margin-bottom: 20px;" type="button" class="btn-danger " value="Exit" />
+      </a>
+      {% endif %}
+    </form>
+  </div>
+</div>
+{% endblock content %}
